@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashish Home Classes | Personalized Home Tuition Class 1–12</title>
+
+<!-- SEO Meta -->
+<meta name="description" content="Personalized home tuition for Class 1–12 in Gorakhpur. Helping students achieve academic excellence with experienced faculty and regular progress reports.">
+<meta name="keywords" content="Ashish Home Classes, Home Tuition Gorakhpur, CBSE UP Board Coaching, Class 1 to 12 Tuition">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+  scroll-behavior: smooth;
+}
+
+body{
+  background:#f5f8fc;
+  color:#1a2b49;
+  line-height: 1.6;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* Header */
+header{
+  background:#fff;
+  padding:15px 0;
+  box-shadow:0 2px 15px rgba(0,0,0,.08);
+  position:sticky;
+  top:0;
+  z-index:999;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:26px;
+  font-weight:800;
+  color:#0B4DBA;
+  text-decoration:none;
+}
+
+.logo span{
+  color:#FF6B1A;
+}
+
+.nav-links{
+  display:flex;
+  gap:25px;
+  list-style:none;
+  align-items:center;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#1a2b49;
+  font-weight:500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover{
+  color:#FF6B1A;
+}
+
+.nav-cta{
+  background:#FF6B1A;
+  color:white !important;
+  padding:8px 18px;
+  border-radius:8px;
+  font-weight:600 !important;
+}
+
+.nav-cta:hover{
+  background:#e55a10;
+}
+
+/* Hero Section */
+.hero{
+  padding:80px 0;
+  background:linear-gradient(135deg,#edf5ff,#ffffff);
+}
+
+.hero-content{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:50px;
+}
+
+.hero-text{
+  flex: 1;
+}
+
+.hero-text h1{
+  font-size:56px;
+  line-height:1.15;
+  font-weight:800;
+  color:#0B2D68;
+}
+
+.hero-text span{
+  color:#FF6B1A;
+}
+
+.hero-text p{
+  margin:20px 0 25px;
+  font-size:18px;
+  color:#555;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:14px 28px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary{
+  background:#FF6B1A;
+  color:white;
+  box-shadow: 0 4px 14px rgba(255,107,26,0.35);
+}
+
+.btn-primary:hover{
+  background:#e55a10;
+  transform: translateY(-2px);
+}
+
+.btn-secondary{
+  border:2px solid #22C55E;
+  color:#22C55E;
+  background:white;
+}
+
+.btn-secondary:hover{
+  background:#22C55E;
+  color:white;
+  transform: translateY(-2px);
+}
+
+.hero-image{
+  flex: 1;
+  text-align: right;
+}
+
+.hero-image img{
+  width:100%;
+  max-width:500px;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(11,77,186,0.12);
+  object-fit: cover;
+}
+
+/* Sections */
+.section{
+  padding:80px 0;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.title h2{
+  font-size:38px;
+  color:#0B2D68;
+  position:relative;
+  display:inline-block;
+}
+
+.title h2::after{
+  content:'';
+  position:absolute;
+  left:50%;
+  bottom:-10px;
+  transform:translateX(-50%);
+  width:60px;
+  height:4px;
+  background:#FF6B1A;
+  border-radius:2px;
+}
+
+.title p{
+  color:#666;
+  margin-top:14px;
+}
+
+/* Class Cards */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:24px;
+}
+
+.card{
+  background:white;
+  padding:35px 25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+  transition: all .3s ease;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 35px rgba(11,77,186,0.12);
+}
+
+.card-icon{
+  width:60px;
+  height:60px;
+  background:rgba(11,77,186,0.08);
+  color:#0B4DBA;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  color:#0B4DBA;
+  margin-bottom:10px;
+  font-size:22px;
+}
+
+.card p{
+  color:#666;
+}
+
+/* Features */
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.feature{
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,.05);
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:16px;
+  color:#1a2b49;
+  transition: transform 0.2s ease;
+}
+
+.feature i{
+  color:#22C55E;
+  font-size:20px;
+}
+
+.feature:hover{
+  transform: translateX(5px);
+}
+
+/* Stats */
+.stats{
+  background:linear-gradient(135deg, #0B4DBA, #08347f);
+  color:white;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  text-align:center;
+}
+
+.stat h2{
+  font-size:52px;
+  font-weight:800;
+  color:#FF8C42;
+  margin-bottom:5px;
+}
+
+.stat p{
+  font-size:16px;
+  color:#e0e8f9;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+/* Contact */
+.contact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+}
+
+.contact-box{
+  background:white;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 5px 25px rgba(0,0,0,.06);
+}
+
+.contact-box h3{
+  color:#0B2D68;
+  font-size:24px;
+  margin-bottom:20px;
+}
+
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:18px;
+  font-size:16px;
+  color:#444;
+}
+
+.contact-item i{
+  width:42px;
+  height:42px;
+  background:#edf5ff;
+  color:#0B4DBA;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  flex-shrink:0;
+}
+
+input,textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:15px;
+  border:1px solid #dbe2ea;
+  border-radius:10px;
+  font-size:15px;
+  outline:none;
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus{
+  border-color:#0B4DBA;
+}
+
+button[type="submit"]{
+  background:#FF6B1A;
+  color:white;
+  border:none;
+  padding:14px 28px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:16px;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover{
+  background:#e55a10;
+}
+
+/* Footer */
+footer{
+  background:#0B2D68;
+  color:#d0dbee;
+  text-align:center;
+  padding:30px 15px;
+  font-size:14px;
+}
+
+/* Floating WhatsApp button */
+.whatsapp{
+  position:fixed;
+  right:25px;
+  bottom:25px;
+  background:#22C55E;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  text-decoration:none;
+  color:white;
+  box-shadow:0 8px 25px rgba(34,197,94,0.45);
+  z-index:999;
+  transition: transform 0.3s;
+}
+
+.whatsapp:hover{
+  transform:scale(1.1);
+}
+
+/* Mobile Nav Toggle */
+.mobile-toggle{
+  display:none;
+  background:none;
+  border:none;
+  font-size:24px;
+  color:#0B2D68;
+  cursor:pointer;
+}
+
+@media(max-width:850px){
+  .hero-content{
+    flex-direction:column;
+    text-align:center;
+  }
+  .hero-text h1{
+    font-size:38px;
+  }
+  .hero-buttons{
+    justify-content:center;
+  }
+  .hero-image img{
+    max-width:100%;
+  }
+  .contact{
+    grid-template-columns:1fr;
+  }
+  .nav-links{
+    display:none;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">ASHISH <span>HOME CLASSES</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#why-us">Why Choose Us</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://wa.me/917985049575" target="_blank" class="nav-cta"><i class="fab fa-whatsapp"></i> Chat Now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <div class="container hero-content">
+    <div class="hero-text">
+      <h1>
+        Better Learning<br>
+        A Brighter <span>Tomorrow</span>
+      </h1>
+      <p>
+        Personalized home tuition for Class 1–12 in Gorakhpur.
+        Helping students build strong concepts and achieve academic excellence.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enquire Now</a>
+        <a href="https://wa.me/917985049575" target="_blank" class="btn btn-secondary">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=900" alt="Students in Classroom">
+    </div>
+  </div>
+</section>
+
+<section id="classes" class="section">
+  <div class="container">
+    <div class="title">
+      <h2>Our Classes</h2>
+      <p>Tailored coaching programs for every educational stage</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-pencil-alt"></i></div>
+        <h3>Class 1 - 5</h3>
+        <p>All Subjects • Foundation Building • Daily Homework Support</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-book-open"></i></div>
+        <h3>Class 6 - 8</h3>
+        <p>Maths, Science & English • Conceptual Clarity • Regular Tests</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h3>Class 9 - 10</h3>
+        <p>CBSE & UP Board • Board Exam Preparation • Previous Year Papers</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-atom"></i></div>
+        <h3>Class 11 - 12</h3>
+        <p>Science, Commerce & Arts • Dedicated Mentorship • Competitive Focus</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why-us" class="section" style="background:#edf3fc;">
+  <div class="container">
+    <div class="title">
+      <h2>Why Choose Us?</h2>
+      <p>The proven standard in personalized education</p>
+    </div>
+
+    <div class="features">
+      <div class="feature"><i class="fas fa-check-circle"></i> Personal One-on-One Attention</div>
+      <div class="feature"><i class="fas fa-check-circle"></i> Small Batch Size & Focused Learning</div>
+      <div class="feature"><i class="fas fa-check-circle"></i> Regular Chapter-wise Mock Tests</div>
+      <div class="feature"><i class="fas fa-check-circle"></i> Timely Parent Progress Reports</div>
+      <div class="feature"><i class="fas fa-check-circle"></i> 5+ Years Experienced Faculty</div>
+      <div class="feature"><i class="fas fa-check-circle"></i> Consistent High Scoring Results</div>
+    </div>
+  </div>
+</section>
+
+<section id="results" class="section stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat">
+        <h2>100+</h2>
+        <p>Happy Students</p>
+      </div>
+      <div class="stat">
+        <h2>95%</h2>
+        <p>Success Rate</p>
+      </div>
+      <div class="stat">
+        <h2>5+</h2>
+        <p>Years Experience</p>
+      </div>
+      <div class="stat">
+        <h2>2021</h2>
+        <p>Mentoring Since</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container">
+    <div class="title">
+      <h2>Contact Us</h2>
+      <p>Schedule a free demo class or discuss your child's learning needs</p>
+    </div>
+
+    <div class="contact">
+      <div class="contact-box">
+        <h3>Get In Touch</h3>
+        <div class="contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <div>
+            <strong>Phone / Call:</strong><br>
+            <a href="tel:+917985049575" style="color:#0B4DBA; text-decoration:none;">+91 79850 49575</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <strong>Location:</strong><br>
+            Gorakhpur, Uttar Pradesh
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <strong>Email:</strong><br>
+            <a href="mailto:info@ashishhomeclasses.com" style="color:#0B4DBA; text-decoration:none;">info@ashishhomeclasses.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-box">
+        <h3>Book Free Demo Class</h3>
+        <form id="enquiryForm" onsubmit="handleEnquiry(event)">
+          <input type="text" id="name" placeholder="Student / Parent Name" required>
+          <input type="text" id="studentClass" placeholder="Class (e.g. Class 9 CBSE)" required>
+          <textarea id="message" rows="4" placeholder="Specific Subject or Query (Optional)"></textarea>
+          <button type="submit"><i class="fas fa-paper-plane"></i> Send Enquiry via WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Ashish Home Classes | Quality Education Made Easy • Gorakhpur, UP</p>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/917985049575" target="_blank" title="Chat on WhatsApp" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+function handleEnquiry(e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const studentClass = document.getElementById('studentClass').value;
+  const message = document.getElementById('message').value;
+
+  const text = encodeURIComponent(
+    `Hello Ashish Sir, I would like to enquire for home classes.\n\n*Name:* ${name}\n*Class:* ${studentClass}\n*Query:* ${message || 'Need more details about batch timings & fee.'}`
+  );
+  window.open(`https://wa.me/917985049575?text=${text}`, '_blank');
+}
+</script>
+
+</body>
+</html>
