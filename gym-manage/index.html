@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GYM - Fitness</title>
+  <meta name="description" content="Transform your fitness journey at TITAN GYM. Modern gym management system with interactive membership packages, workout schedule, and member portal.">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="container">
+      <a href="#hero" class="logo">
+        <div class="logo-icon"><i class="fas fa-dumbbell"></i></div>
+        <span>Arushi<span style="color: var(--primary);">GYM</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#pricing" class="nav-link">Packages</a></li>
+          <li><a href="#schedule" class="nav-link">Classes</a></li>
+          <li><a href="#bmi" class="nav-link">BMI Tool</a></li>
+          <li><a href="#portal" class="nav-link">Member Portal</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions" id="nav-auth-container">
+        <!-- Dynamically rendered by JS -->
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <i class="fas fa-bolt"></i> NEXT GENERATION FITNESS CLUB
+          </div>
+          <h1 class="hero-title">
+            UNLEASH YOUR <span class="gradient-orange">ARUSHI</span> POTENTIAL.
+          </h1>
+          <p class="hero-desc">
+            State-of-the-art hypertrophy equipment, elite certified personal trainers, dynamic group workout classes, and real-time membership booking.
+          </p>
+          <div class="hero-buttons">
+            <a href="#pricing" class="btn btn-primary">
+              Book Membership <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#bmi" class="btn btn-outline">
+              Calculate BMI <i class="fas fa-calculator"></i>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h3>2,500+</h3>
+              <p>Active Members</p>
+            </div>
+            <div class="stat-item">
+              <h3>45+</h3>
+              <p>Expert Trainers</p>
+            </div>
+            <div class="stat-item">
+              <h3>99.4%</h3>
+              <p>Satisfaction Rate</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+          <div class="hero-card-preview">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80" alt="Gym Training Center" class="hero-img">
+            
+            <div class="floating-badge top-right">
+              <div class="badge-icon"><i class="fas fa-fire"></i></div>
+              <div class="badge-text">
+                <h4>500+ KCAL</h4>
+                <p>Average Workout Burn</p>
+              </div>
+            </div>
+
+            <div class="floating-badge bottom-left">
+              <div class="badge-icon cyan"><i class="fas fa-crown"></i></div>
+              <div class="badge-text">
+                <h4>PREMIUM CLUB</h4>
+                <p>24/7 VIP Access</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing & Packages Section -->
+  <section id="pricing" class="section" style="background: rgba(18, 22, 31, 0.4);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle"><i class="fas fa-tags"></i> Membership Plans</span>
+        <h2 class="section-title">Choose Your <span class="gradient-orange">Titan Plan</span></h2>
+        <p class="section-desc">Flexible gym membership options tailored to your personal goals and lifestyle.</p>
+      </div>
+
+      <div class="pricing-toggle">
+        <button id="btn-monthly" class="toggle-btn active" onclick="setBillingCycle('monthly')">Monthly Billing</button>
+        <button id="btn-yearly" class="toggle-btn" onclick="setBillingCycle('yearly')">Yearly Billing (Save 20%)</button>
+      </div>
+
+      <div id="packages-grid" class="packages-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Classes & Timetable Section -->
+  <section id="schedule" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle"><i class="fas fa-calendar-alt"></i> Class Timetable</span>
+        <h2 class="section-title">High-Intensity <span class="gradient-text">Group Classes</span></h2>
+        <p class="section-desc">Filter upcoming daily workout sessions and reserve your spot in advance.</p>
+      </div>
+
+      <div class="schedule-tabs">
+        <button class="tab-btn active" onclick="filterSchedule('all', this)">All Classes</button>
+        <button class="tab-btn" onclick="filterSchedule('hiit', this)">Crossfit & HIIT</button>
+        <button class="tab-btn" onclick="filterSchedule('strength', this)">Strength Training</button>
+        <button class="tab-btn" onclick="filterSchedule('yoga', this)">Yoga & Flexibility</button>
+        <button class="tab-btn" onclick="filterSchedule('cardio', this)">Cardio Spin</button>
+      </div>
+
+      <div id="schedule-grid" class="schedule-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- BMI Calculator Tool Section -->
+  <section id="bmi" class="section" style="background: rgba(18, 22, 31, 0.4);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle"><i class="fas fa-calculator"></i> Health Metrics</span>
+        <h2 class="section-title">Interactive <span class="gradient-orange">BMI Calculator</span></h2>
+        <p class="section-desc">Compute your Body Mass Index instantly and get custom training recommendations.</p>
+      </div>
+
+      <div class="bmi-wrapper">
+        <div class="bmi-form">
+          <div class="input-group">
+            <label for="bmi-height">Height (cm): <span id="height-val" style="color:var(--primary);">175</span></label>
+            <input type="range" id="bmi-height" class="input-control" min="120" max="220" value="175" oninput="document.getElementById('height-val').textContent = this.value">
+          </div>
+
+          <div class="input-group">
+            <label for="bmi-weight">Weight (kg): <span id="weight-val" style="color:var(--accent);">70</span></label>
+            <input type="range" id="bmi-weight" class="input-control" min="40" max="150" value="70" oninput="document.getElementById('weight-val').textContent = this.value">
+          </div>
+
+          <button class="btn btn-primary" onclick="initBmiCalculator()">Recalculate BMI Score</button>
+        </div>
+
+        <div class="bmi-display">
+          <p style="color:var(--text-muted); text-transform:uppercase; font-size:0.85rem; letter-spacing:1px;">Your BMI Score</p>
+          <div id="bmi-score" class="bmi-value gradient-orange">22.9</div>
+          <div id="bmi-status" class="bmi-status normal">Normal Healthy Weight</div>
+          <p id="bmi-tip" style="margin-top:20px; color:var(--text-muted); font-size:0.95rem;">
+            Great shape! Maintain strength training & cardiovascular endurance balance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Portal (User Bookings & Admin Management) -->
+  <section id="portal" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle"><i class="fas fa-laptop-code"></i> Application Hub</span>
+        <h2 class="section-title">Management <span class="gradient-text">Portal & Bookings</span></h2>
+        <p class="section-desc">View your active membership bookings or toggle Admin control panel.</p>
+      </div>
+
+      <div class="app-tabs-header">
+        <button id="btn-tab-dashboard" class="app-tab-btn active" onclick="switchAppTab('tab-dashboard')">
+          <i class="fas fa-user-circle"></i> Member Dashboard & Bookings
+        </button>
+        <button id="btn-tab-admin" class="app-tab-btn" onclick="switchAppTab('tab-admin')">
+          <i class="fas fa-user-shield"></i> Admin Control Panel
+        </button>
+        <button id="btn-tab-packages" class="app-tab-btn" onclick="switchAppTab('tab-packages')">
+          <i class="fas fa-boxes"></i> Package List Preview
+        </button>
+      </div>
+
+      <!-- Tab 1: Member Dashboard -->
+      <div id="tab-dashboard" class="app-tab-content">
+        <div id="user-dashboard-content">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+
+      <!-- Tab 2: Admin Panel -->
+      <div id="tab-admin" class="app-tab-content" style="display: none;">
+        <div id="admin-panel-content">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+
+      <!-- Tab 3: Package List View -->
+      <div id="tab-packages" class="app-tab-content" style="display: none;">
+        <p style="color:var(--text-muted); margin-bottom:20px;">Use the top Packages section to interactively book subscriptions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & FAQs Section -->
+  <section id="contact" class="section" style="background: rgba(18, 22, 31, 0.4);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle"><i class="fas fa-envelope"></i> Get In Touch</span>
+        <h2 class="section-title">Have Questions? <span class="gradient-orange">Contact Us</span></h2>
+        <p class="section-desc">Our support team and fitness advisors are available 24/7 to assist you.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:40px; align-items:start;">
+        <div style="background:var(--bg-card); padding:36px; border-radius:var(--radius-lg); border:1px solid var(--border-light);">
+          <h3 style="margin-bottom:20px;">Send Us a Message</h3>
+          <form onsubmit="event.preventDefault(); showToast('Thank you! Message sent to gym team.', 'success'); this.reset();">
+            <div class="input-group" style="margin-bottom:16px;">
+              <label>Full Name</label>
+              <input type="text" class="input-control" placeholder="Enter your name" required>
+            </div>
+            <div class="input-group" style="margin-bottom:16px;">
+              <label>Email Address</label>
+              <input type="email" class="input-control" placeholder="name@example.com" required>
+            </div>
+            <div class="input-group" style="margin-bottom:24px;">
+              <label>Your Message</label>
+              <textarea class="input-control" rows="4" placeholder="How can we help your fitness journey?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry</button>
+          </form>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <div style="background:var(--bg-card); padding:28px; border-radius:var(--radius-md); border:1px solid var(--border-light); display:flex; gap:20px; align-items:center;">
+            <div style="width:50px; height:50px; border-radius:12px; background:rgba(255,94,0,0.15); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:1.4rem;">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <h4>Location Address</h4>
+              <p style="color:var(--text-muted); font-size:0.9rem;">124 Fitness Boulevard, Cyber City, Sector 4</p>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-card); padding:28px; border-radius:var(--radius-md); border:1px solid var(--border-light); display:flex; gap:20px; align-items:center;">
+            <div style="width:50px; height:50px; border-radius:12px; background:rgba(0,240,255,0.15); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:1.4rem;">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div>
+              <h4>Phone Support</h4>
+              <p style="color:var(--text-muted); font-size:0.9rem;">+1 (800) 555-TITAN / +1 (800) 555-8482</p>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-card); padding:28px; border-radius:var(--radius-md); border:1px solid var(--border-light); display:flex; gap:20px; align-items:center;">
+            <div style="width:50px; height:50px; border-radius:12px; background:rgba(16,185,129,0.15); color:var(--success); display:flex; align-items:center; justify-content:center; font-size:1.4rem;">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div>
+              <h4>Operating Hours</h4>
+              <p style="color:var(--text-muted); font-size:0.9rem;">Mon - Sun: Open 24 Hours / 7 Days</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#hero" class="logo" style="margin-bottom:16px;">
+            <div class="logo-icon"><i class="fas fa-dumbbell"></i></div>
+            <span>Arushi<span style="color: var(--primary);">GYM</span></span>
+          </a>
+          <p class="footer-desc">
+            Empowering individuals to achieve peak physical performance through state-of-the-art facilities and elite training programs.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#pricing">Membership Plans</a></li>
+            <li><a href="#schedule">Class Schedule</a></li>
+            <li><a href="#bmi">BMI Calculator</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Member Area</h4>
+          <ul class="footer-links">
+            <li><a href="#portal" onclick="switchAppTab('tab-dashboard')">My Bookings</a></li>
+            <li><a href="#portal" onclick="switchAppTab('tab-admin')">Admin Panel</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('modal-login')">User Login</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('modal-register')">Register Account</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Stay Connected</h4>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">Subscribe for training tips and exclusive membership offers.</p>
+          <form onsubmit="event.preventDefault(); showToast('Subscribed to Titan Gym newsletter!', 'success'); this.reset();" style="display:flex; gap:8px;">
+            <input type="email" class="input-control" placeholder="Email address" required style="padding:10px 14px;">
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Arushi GYM Management System. All Rights Reserved. Built with Pure HTML5, CSS3, & JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- MODALS --- -->
+
+  <!-- Login Modal -->
+  <div id="modal-login" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Account Login</h3>
+        <button class="modal-close" onclick="closeModal('modal-login')"><i class="fas fa-times"></i></button>
+      </div>
+      <form onsubmit="handleLogin(event)">
+        <div class="input-group" style="margin-bottom:16px;">
+          <label>Email Address</label>
+          <input type="email" id="login-email" class="input-control" placeholder="john@test.com or admin@gmail.com" required>
+        </div>
+        <div class="input-group" style="margin-bottom:24px;">
+          <label>Password</label>
+          <input type="password" id="login-password" class="input-control" placeholder="Enter password" required>
+        </div>
+        <p style="color:var(--accent); font-size:0.82rem; margin-bottom:20px;">
+          <i class="fas fa-info-circle"></i> Demo User: <strong>john@test.com</strong> | Admin: <strong>admin@gmail.com</strong> / <strong>Test@12345</strong>
+        </p>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div id="modal-register" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Create Member Account</h3>
+        <button class="modal-close" onclick="closeModal('modal-register')"><i class="fas fa-times"></i></button>
+      </div>
+      <form onsubmit="handleRegister(event)">
+        <div class="input-group" style="margin-bottom:16px;">
+          <label>Full Name</label>
+          <input type="text" id="reg-name" class="input-control" placeholder="e.g. Rahul Sharma" required>
+        </div>
+        <div class="input-group" style="margin-bottom:16px;">
+          <label>Email Address</label>
+          <input type="email" id="reg-email" class="input-control" placeholder="rahul@example.com" required>
+        </div>
+        <div class="input-group" style="margin-bottom:24px;">
+          <label>Choose Password</label>
+          <input type="password" class="input-control" placeholder="Minimum 6 characters" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Create Account & Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Booking Confirmation Modal -->
+  <div id="modal-booking" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Confirm Package Booking</h3>
+        <button class="modal-close" onclick="closeModal('modal-booking')"><i class="fas fa-times"></i></button>
+      </div>
+      <form onsubmit="confirmBooking(event)">
+        <div id="booking-pkg-summary"></div>
+
+        <div class="input-group" style="margin-bottom:16px;">
+          <label>Membership Start Date</label>
+          <input type="date" id="booking-date" class="input-control" required>
+        </div>
+
+        <div class="input-group" style="margin-bottom:24px;">
+          <label>Select Payment Option</label>
+          <select class="input-control">
+            <option>Credit / Debit Card</option>
+            <option>UPI / NetBanking Instant</option>
+            <option>Pay at Gym Counter (Cash)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;">Confirm & Complete Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Add Package Modal -->
+  <div id="modal-add-package" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Add New Gym Package</h3>
+        <button class="modal-close" onclick="closeModal('modal-add-package')"><i class="fas fa-times"></i></button>
+      </div>
+      <form onsubmit="handleAddPackage(event)">
+        <div class="input-group" style="margin-bottom:14px;">
+          <label>Package Title</label>
+          <input type="text" id="new-pkg-title" class="input-control" placeholder="e.g. Crossfit Extreme" required>
+        </div>
+        <div class="input-group" style="margin-bottom:14px;">
+          <label>Category</label>
+          <input type="text" id="new-pkg-category" class="input-control" placeholder="e.g. Pro Level" required>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px;">
+          <div class="input-group">
+            <label>Monthly Price ($)</label>
+            <input type="number" id="new-pkg-monthly" class="input-control" placeholder="49" required>
+          </div>
+          <div class="input-group">
+            <label>Yearly Price ($)</label>
+            <input type="number" id="new-pkg-yearly" class="input-control" placeholder="490" required>
+          </div>
+        </div>
+        <div class="input-group" style="margin-bottom:24px;">
+          <label>Features (Comma Separated)</label>
+          <input type="text" id="new-pkg-features" class="input-control" placeholder="24/7 Access, Personal Trainer, Sauna" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Add Package to System</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript Engine -->
+  <script src="js/script.js"></script>
+</body>
+</html>

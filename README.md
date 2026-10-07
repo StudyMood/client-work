@@ -11,6 +11,7 @@ A centralized GitHub repository by **Abhishek Kumar ([StudyMood](https://github.
 | **Client Work Hub** | Portfolio / Showcase Hub | 🟢 Live | [Open Hub](https://studymood.github.io/client-work/) |
 | **Ashish Home Classes** | EdTech / Coaching Website | 🟢 Live | [Open Website](https://studymood.github.io/client-work/ashish-home-classes/) |
 | **Pushkal Singh Birthday Tribute** | Interactive Tribute App | 🟢 Live | [Open Tribute](https://studymood.github.io/pushkal-sir-birthday/) |
+| **Arushi Gym Management** | Fitness / Gym Portal | 🟢 Live | [Open Website](https://studymood.github.io/client-work/gym-manage/) |
 
 ---
 
@@ -25,6 +26,10 @@ client-work/
 │
 └── ashish-home-classes/       # 🎓 Client 1: Ashish Home Classes (Home Tuition Demo)
     └── index.html             #    Complete standalone website with WhatsApp enquiry
+├── gym-manage/                # 🏋️ Client 2: Arushi Gym Management System
+    ├── index.html             #    Fitness club & gym booking portal
+    ├── css/style.css          #    Modern gym styling & dark UI
+    └── js/script.js           #    State management, booking engine & BMI calculator
 ```
 
 ---
@@ -40,6 +45,19 @@ client-work/
   - Direct WhatsApp Enquiry Integration (pre-filled inquiry message with name, class & query).
   - Floating WhatsApp quick-connect button.
 - **Tech Stack:** HTML5, CSS3 (Modern Flexbox/Grid), Vanilla JavaScript, Font Awesome 6.
+
+---
+
+### 2. 🏋️ [Arushi Gym Management](./gym-manage/)
+- **Target Audience:** Gym members, fitness enthusiasts & gym administrators.
+- **Features:**
+  - Dynamic Membership Pricing toggle (Monthly vs Yearly 20% discount).
+  - Interactive Group Class Timetable (HIIT, Strength, Yoga, Cardio Spin).
+  - Live Interactive BMI Calculator with visual health metrics and recommendations.
+  - Member Portal Dashboard for booking history, active subscriptions, and receipt generator.
+  - Admin Management Panel for package creation/deletion, revenue metrics, and booking status controls.
+  - LocalStorage state persistence and interactive toast notifications.
+- **Tech Stack:** HTML5, Modern CSS3 (Dark Theme + Glassmorphism), Vanilla JavaScript (ES6+), Font Awesome 6.
 
 ---
 
